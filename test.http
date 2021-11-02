@@ -1,0 +1,21 @@
+### Environment variables
+@baseUrl = http://127.0.0.1:5000/user/
+@contentType = application/json
+
+# paste username into variable without quotation marks
+@username = Zoomer
+
+### Create user
+POST {{baseUrl}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "username": "Zoomer",
+    "password": "Boomer"
+}
+
+### Get user by username
+GET {{baseUrl}}{{username}} HTTP/1.1
+
+### Get all users
+GET {{baseUrl}}list HTTP/1.1

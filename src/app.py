@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, request
+from flask import g
+
+
+
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=5000)
+DATABASE = './db/user_db'
 
 users = [
   {
@@ -16,6 +19,7 @@ users = [
   }
 ]
 
+# Endpoints
 @app.route('/')
 def index():
   return 'yo'
@@ -34,3 +38,6 @@ def read_user(username):
 @app.route('/user/list')
 def read_users():
   return jsonify(users)
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', port=5000)

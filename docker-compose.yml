@@ -8,3 +8,14 @@ services:
       dockerfile: ./src/Dockerfile
     ports:
       - 5000:5000
+  database:
+    image: 'postgres:latest'
+    container_name: user-db
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: user_db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./src/db/create-user-table.sql:/docker-entrypoint-initdb.d/init.sql

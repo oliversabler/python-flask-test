@@ -1,5 +1,5 @@
 ### Environment variables
-@baseUrl = http://127.0.0.1:5000/user/
+@baseUrl = http://localhost:5000/user/
 @contentType = application/json
 
 # paste username into variable without quotation marks
